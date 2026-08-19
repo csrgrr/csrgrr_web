@@ -150,6 +150,26 @@ const PROJECT_DESCRIPTIONS: Record<string, Partial<Record<Exclude<Language, 'rly
         es: 'Herramienta de investigación que permite consultar y comparar las grafías del nombre de Osiris en los Textos de los Sarcófagos del Reino Medio.',
         gl: 'Ferramenta de investigación que permite consultar e comparar as grafías do nome de Osiris nos Textos dos Sarcófagos do Reino Medio.',
         pt: 'Ferramenta de investigação que permite consultar e comparar as grafias do nome de Osíris nos Textos dos Sarcófagos do Império Médio.'
+    },
+    'mdc-to-unicode': {
+        es: 'Biblioteca y aplicación web para convertir jeroglíficos egipcios de forma tridireccional entre Unicode, código Unicode y MdC.',
+        gl: 'Biblioteca e aplicación web para converter xeroglíficos exipcios de forma tridireccional entre Unicode, código Unicode e MdC.',
+        pt: 'Biblioteca e aplicação web para converter hieróglifos egípcios de forma tridirecional entre Unicode, código Unicode e MdC.'
+    },
+    'ocr-pt-ct': {
+        es: 'Herramienta de reconocimiento óptico de caracteres para procesar textos de los Textos de los Sarcófagos del Reino Medio.',
+        gl: 'Ferramenta de recoñecemento óptico de caracteres para procesar textos dos Textos dos Sarcófagos do Reino Medio.',
+        pt: 'Ferramenta de reconhecimento ótico de caracteres para processar textos dos Textos dos Sarcófagos do Império Médio.'
+    },
+    ttae: {
+        es: 'Continuación del proyecto OCR-PT-CT orientada a implementar un conjunto de herramientas digitales que conecte de forma semiautomática el reconocimiento óptico de caracteres con la transliteración mediante la transcripción.',
+        gl: 'Continuación do proxecto OCR-PT-CT orientada a implementar un conxunto de ferramentas dixitais que conecte de forma semiautomática o recoñecemento óptico de caracteres coa transliteración mediante a transcrición.',
+        pt: 'Continuação do projeto OCR-PT-CT orientada para a implementação de um conjunto de ferramentas digitais que ligue de forma semiautomática o reconhecimento ótico de caracteres à transliteração através da transcrição.'
+    },
+    jsesh: {
+        es: 'El principal procesador de textos jeroglíficos del antiguo Egipto, utilizado en numerosas publicaciones egiptológicas profesionales.',
+        gl: 'O principal procesador de textos xeroglíficos do antigo Exipto, utilizado en numerosas publicacións exiptolóxicas profesionais.',
+        pt: 'O principal processador de textos hieroglíficos do antigo Egito, utilizado em numerosas publicações egiptológicas profissionais.'
     }
 };
 
@@ -205,7 +225,7 @@ const RLYEHIAN_SUFFIXES = ['nagl', 'fhtagn', 'nafh', 'lui', 'oth', 'eh', 'agl', 
 export class LanguageService {
     private readonly document = inject(DOCUMENT);
 
-    readonly language = signal<Language>('en');
+    readonly language = signal<Language>(this.detectBrowserLanguage());
     readonly options: readonly LanguageOption[] = [
         { code: 'en', name: 'English' },
         { code: 'es', name: 'Español' },
@@ -251,6 +271,23 @@ export class LanguageService {
 
     content(value: string): string {
         return this.language() === 'rly' ? this.toRlyehian(value) : value;
+    }
+
+    private detectBrowserLanguage(): Language {
+        const navigator = this.document.defaultView?.navigator;
+        const preferredLanguages = navigator?.languages.length
+            ? navigator.languages
+            : [navigator?.language ?? 'en'];
+
+        for (const locale of preferredLanguages) {
+            const language = locale.toLocaleLowerCase('en').split('-')[0];
+
+            if (language === 'en' || language === 'es' || language === 'gl' || language === 'pt') {
+                return language;
+            }
+        }
+
+        return 'en';
     }
 
     private toRlyehian(value: string): string {
