@@ -1,0 +1,91 @@
+<div class="project-card">
+
+  <div class="project-card__image">
+
+    @if (project.image) {
+      <img
+        [src]="project.image"
+        [alt]="project.name || 'Proyecto'"
+      >
+    }
+
+  </div>
+
+  <div class="project-card__content">
+
+    <div class="project-card__main">
+
+      @if (project.name) {
+        <h3 class="project-card__title">
+          {{ project.name }}
+        </h3>
+      }
+
+      @if (project.description) {
+        <p class="project-card__description">
+          {{ project.description }}
+        </p>
+      }
+
+      @if (project.technologies?.length) {
+        <div class="project-card__technologies">
+
+          @for (technology of project.technologies; track technology) {
+            <span class="project-card__technology">
+              {{ technology }}
+            </span>
+          }
+
+        </div>
+      }
+
+    </div>
+
+    <div class="project-card__footer">
+
+      <div class="project-card__links">
+
+        @if (project.webUrl) {
+          <a
+            [href]="project.webUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card__button"
+          >
+            Ver proyecto
+            <span>→</span>
+          </a>
+        }
+
+        @if (project.githubUrl) {
+          <a
+            [href]="project.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card__github"
+          >
+            GitHub
+          </a>
+        }
+
+      </div>
+
+      @if (project.creator) {
+        <div class="project-card__creator">
+
+          <span class="project-card__creator-label">
+            Creador / responsable
+          </span>
+
+          <span class="project-card__creator-name">
+            {{ project.creator }}
+          </span>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</div>

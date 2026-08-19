@@ -20,3 +20,12 @@ app-header {
   max-width: 300px;
   height: auto;
 }
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}

@@ -1,0 +1,83 @@
+.project-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  max-height: 140px;
+  max-width: 600px;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  padding: 20px;
+  
+
+  // Imagen
+  &__image {
+    img {
+      max-width: 200px;
+      max-height: 120px;
+    }
+  }
+
+  // Zona de texto
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  // Título
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  // Descripción
+  &__description {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #cfcfcf;
+  }
+
+  // Parte inferior
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+  // Botón
+  &__button {
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-bottom: 1px solid #555;
+
+    transition:
+      color 0.25s ease,
+      border-color 0.25s ease;
+
+    span {
+      font-size: 20px;
+    }
+
+  }
+
+ 
+  
+}

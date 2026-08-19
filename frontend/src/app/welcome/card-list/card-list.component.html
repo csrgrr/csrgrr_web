@@ -1,0 +1,11 @@
+<div class="list-grid-container">
+
+<div class="projects-grid">
+
+  @for (project of projects; track project.id) {
+    <app-card [project]="project"></app-card>
+  }
+
+</div>
+
+</div>
