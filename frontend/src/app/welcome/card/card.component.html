@@ -26,43 +26,6 @@
         </p>
       }
 
-      @if (project.technologies?.length) {
-        <div class="project-card__technologies">
-          @for (technology of project.technologies; track technology) {
-            <span class="project-card__technology">
-              {{ i18n.content(technology) }}
-            </span>
-          }
-        </div>
-      }
-    </div>
-
-    <div class="project-card__footer">
-      <div class="project-card__links">
-        @if (project.webUrl) {
-          <a
-            [href]="project.webUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card__button"
-          >
-            {{ i18n.text("viewProject") }}
-            <span>→</span>
-          </a>
-        }
-
-        @if (project.githubUrl) {
-          <a
-            [href]="project.githubUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="project-card__github"
-          >
-            {{ i18n.content("GitHub") }}
-          </a>
-        }
-      </div>
-
       @if (project.creator) {
         <div class="project-card__creator">
           <span class="project-card__creator-name">
@@ -70,6 +33,33 @@
           </span>
         </div>
       }
+    </div>
+
+    <div class="project-card__footer">
+      <div class="project-card__links">
+        @if (project.githubUrl) {
+          <a
+            [href]="project.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card__link"
+          >
+            Repo
+          </a>
+        }
+
+        @if (project.webUrl) {
+          <a
+            [href]="project.webUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card__link"
+          >
+            {{ i18n.text("viewProject") }}
+            <span>→</span>
+          </a>
+        }
+      </div>
     </div>
   </div>
 </div>
