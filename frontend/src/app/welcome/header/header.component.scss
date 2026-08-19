@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 220px;
+  min-width: 130px;
   padding: 10px 12px;
   border: 1px solid var(--color-foreground);
   box-sizing: border-box;
@@ -57,11 +57,8 @@
   }
 }
 
-.language-menu__current {
-  margin-left: auto;
-}
-
 .language-menu__arrow {
+  margin-left: auto;
   transition: transform 0.2s ease;
 }
 
@@ -101,10 +98,6 @@
 
   .language-menu__trigger {
     min-width: 0;
-  }
-
-  .language-menu__trigger > span:first-child {
-    display: none;
   }
 
   .header__brand {

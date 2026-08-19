@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { effect, inject, Injectable, signal } from '@angular/core';
 
-export type Language = 'en' | 'es' | 'gl' | 'rly';
+export type Language = 'en' | 'es' | 'gl' | 'pt' | 'rly';
 export type TranslationKey =
     | 'language'
     | 'viewProject'
@@ -91,13 +91,35 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         archaeologicalSites: 'Xacementos arqueolóxicos',
         about: 'Sobre',
         projects: 'Proxectos'
+    },
+    pt: {
+        language: 'Idioma',
+        viewProject: 'Ver projeto',
+        creator: 'Criador / responsável',
+        projectFallback: 'Projeto',
+        underConstruction: 'Página em construção',
+        myProjects: 'Os meus projetos',
+        managedProjects: 'Projetos que administro',
+        teamProjects: 'Parte da equipa',
+        thirdPartyProjects: 'Projetos de terceiros',
+        filter: 'Filtrar',
+        allLabels: 'Todas as etiquetas',
+        defaultView: 'Por defeito',
+        byCategory: 'Por categoria',
+        texts: 'Textos',
+        collections: 'Coleções',
+        network: 'Redes',
+        archaeologicalSites: 'Sítios arqueológicos',
+        about: 'Sobre',
+        projects: 'Projetos'
     }
 };
 
 const PROJECT_DESCRIPTIONS: Record<string, Partial<Record<Exclude<Language, 'rly'>, string>>> = {
     'osiris-spelling-software': {
         es: 'Herramienta de investigación que permite consultar y comparar las grafías del nombre de Osiris en los Textos de los Sarcófagos del Reino Medio.',
-        gl: 'Ferramenta de investigación que permite consultar e comparar as grafías do nome de Osiris nos Textos dos Sarcófagos do Reino Medio.'
+        gl: 'Ferramenta de investigación que permite consultar e comparar as grafías do nome de Osiris nos Textos dos Sarcófagos do Reino Medio.',
+        pt: 'Ferramenta de investigação que permite consultar e comparar as grafias do nome de Osíris nos Textos dos Sarcófagos do Império Médio.'
     }
 };
 
@@ -152,6 +174,7 @@ export class LanguageService {
         { code: 'en', name: 'English' },
         { code: 'es', name: 'Español' },
         { code: 'gl', name: 'Galego' },
+        { code: 'pt', name: 'Português' },
         { code: 'rly', name: 'R’lyehian' }
     ];
 
