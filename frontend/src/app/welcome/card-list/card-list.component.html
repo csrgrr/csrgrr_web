@@ -1,11 +1,59 @@
 <div class="list-grid-container">
+  <div class="project-controls">
+    <div
+      class="grouping-control"
+      role="group"
+      [attr.aria-label]="i18n.text('byCategory')"
+    >
+      <button
+        type="button"
+        class="grouping-control__button"
+        [class.grouping-control__button--active]="
+          groupingMode() === 'ownership' && !selectedLabel()
+        "
+        (click)="setGroupingMode('ownership')"
+      >
+        {{ i18n.text("defaultView") }}
+      </button>
+      <button
+        type="button"
+        class="grouping-control__button"
+        [class.grouping-control__button--active]="
+          groupingMode() === 'labels' && !selectedLabel()
+        "
+        (click)="setGroupingMode('labels')"
+      >
+        {{ i18n.text("byCategory") }}
+      </button>
+    </div>
 
-<div class="projects-grid">
+    <details class="filter-menu" #filterMenu>
+      <summary class="filter-menu__trigger">
+        {{ i18n.text("filter") }}
+        <span aria-hidden="true">↓</span>
+      </summary>
+      <div class="filter-menu__options">
+        <button type="button" (click)="setFilter(null, filterMenu)">
+          {{ i18n.text("allLabels") }}
+        </button>
+        @for (option of labelOptions; track option.label) {
+          <button type="button" (click)="setFilter(option.label, filterMenu)">
+            {{ i18n.text(option.title) }}
+          </button>
+        }
+      </div>
+    </details>
+  </div>
 
-  @for (project of projects; track project.id) {
-    <app-card [project]="project"></app-card>
+  @for (section of sections(); track section.id) {
+    <section class="project-section">
+      <h2 class="project-section__title">{{ i18n.text(section.title) }}</h2>
+
+      <div class="projects-grid">
+        @for (project of section.projects; track project.id) {
+          <app-card [project]="project"></app-card>
+        }
+      </div>
+    </section>
   }
-
-</div>
-
 </div>

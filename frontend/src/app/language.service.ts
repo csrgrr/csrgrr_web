@@ -7,7 +7,18 @@ export type TranslationKey =
     | 'viewProject'
     | 'creator'
     | 'projectFallback'
-    | 'underConstruction';
+    | 'underConstruction'
+    | 'myProjects'
+    | 'managedProjects'
+    | 'thirdPartyProjects'
+    | 'filter'
+    | 'allLabels'
+    | 'defaultView'
+    | 'byCategory'
+    | 'texts'
+    | 'collections'
+    | 'network'
+    | 'archaeologicalSites';
 
 export interface LanguageOption {
     code: Language;
@@ -20,21 +31,54 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         viewProject: 'View project',
         creator: 'Creator / maintainer',
         projectFallback: 'Project',
-        underConstruction: 'Page under construction'
+        underConstruction: 'Page under construction',
+        myProjects: 'My projects',
+        managedProjects: 'Projects I manage',
+        thirdPartyProjects: 'Third-party projects',
+        filter: 'Filter',
+        allLabels: 'All labels',
+        defaultView: 'Default',
+        byCategory: 'By category',
+        texts: 'Texts',
+        collections: 'Collections',
+        network: 'Network',
+        archaeologicalSites: 'Archaeological sites'
     },
     es: {
         language: 'Idioma',
         viewProject: 'Ver proyecto',
         creator: 'Creador / responsable',
         projectFallback: 'Proyecto',
-        underConstruction: 'Página en construcción'
+        underConstruction: 'Página en construcción',
+        myProjects: 'Mis proyectos',
+        managedProjects: 'Proyectos que administro',
+        thirdPartyProjects: 'Proyectos de terceras partes',
+        filter: 'Filtrar',
+        allLabels: 'Todos los labels',
+        defaultView: 'Por propiedad',
+        byCategory: 'Por categoría',
+        texts: 'Textos',
+        collections: 'Colecciones',
+        network: 'Redes',
+        archaeologicalSites: 'Yacimientos arqueológicos'
     },
     gl: {
         language: 'Idioma',
         viewProject: 'Ver proxecto',
         creator: 'Creador / responsable',
         projectFallback: 'Proxecto',
-        underConstruction: 'Páxina en construción'
+        underConstruction: 'Páxina en construción',
+        myProjects: 'Os meus proxectos',
+        managedProjects: 'Proxectos que administro',
+        thirdPartyProjects: 'Proxectos de terceiros',
+        filter: 'Filtrar',
+        allLabels: 'Todas as etiquetas',
+        defaultView: 'Por propiedade',
+        byCategory: 'Por categoría',
+        texts: 'Textos',
+        collections: 'Coleccións',
+        network: 'Redes',
+        archaeologicalSites: 'Xacementos arqueolóxicos'
     }
 };
 

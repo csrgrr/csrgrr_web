@@ -3,18 +3,99 @@
   width: 100%;
 }
 
+.list-grid-container {
+  width: 100%;
+  max-width: calc((3 * 600px) + (2 * 2rem) + (2 * 2rem));
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.project-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.grouping-control {
+  display: flex;
+  border: 1px solid var(--color-foreground);
+}
+
+.grouping-control__button,
+.filter-menu button {
+  padding: 10px 12px;
+  background: transparent;
+  border: 0;
+  color: var(--color-foreground);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible,
+  &--active {
+    color: var(--color-background);
+    background: var(--color-foreground);
+    outline: none;
+  }
+}
+
+.grouping-control__button + .grouping-control__button {
+  border-left: 1px solid var(--color-foreground);
+}
+
+.filter-menu {
+  position: relative;
+}
+
+.filter-menu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-foreground);
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.filter-menu__options {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 260px;
+  background: var(--color-background);
+  border: 1px solid var(--color-foreground);
+}
+
+.filter-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.project-section + .project-section {
+  margin-top: 3rem;
+}
+
+.project-section__title {
+  margin: 0 0 1.25rem;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+}
+
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
-  width: 100%;
-  max-width: calc((3 * 600px) + (2 * 2rem) + (2 * 2rem));
-  margin: 0 auto;
-  padding: 2rem;
-  box-sizing: border-box;
 }
 
 app-card {
@@ -24,6 +105,23 @@ app-card {
   min-width: 0;
 }
 
-.list-grid-container {
-  width: 100%;
+@media (max-width: 680px) {
+  .project-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .grouping-control__button {
+    flex: 1;
+  }
+
+  .filter-menu__trigger {
+    justify-content: space-between;
+  }
+
+  .filter-menu__options {
+    left: 0;
+    width: 100%;
+    min-width: 0;
+  }
 }
