@@ -1,15 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-background: #222222;
+  --color-foreground: #d8d8d8;
+}
+
 @font-face {
-  font-family: 'Mode Seven';
-  src: url('/assets/fonts/mode-seven.ttf') format('truetype');
+  font-family: "Mode Seven";
+  src: url("/assets/fonts/mode-seven.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 html,
 body {
+  min-height: 100%;
   margin: 0;
-  font-family: 'Mode Seven', sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Mode Seven", sans-serif;
 }
 
 button,

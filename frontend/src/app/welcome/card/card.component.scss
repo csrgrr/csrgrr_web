@@ -1,21 +1,29 @@
 .project-card {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  max-height: 140px;
-  max-width: 600px;
-  background: #000;
-  color: #fff;
+  gap: 24px;
+  width: 100%;
+  min-height: 240px;
+  background: var(--color-background);
+  border: 1px solid var(--color-foreground);
+  box-sizing: border-box;
+  color: var(--color-foreground);
   overflow: hidden;
-  padding: 20px;
-  
+  padding: 18px;
 
   // Imagen
   &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42%;
+    min-width: 0;
+
     img {
-      max-width: 200px;
-      max-height: 120px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 202px;
+      object-fit: contain;
     }
   }
 
@@ -24,13 +32,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    gap: 20px;
     min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   &__main {
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 10px;
   }
 
   // Título
@@ -39,15 +50,15 @@
     font-size: 18px;
     line-height: 1.1;
     font-weight: 600;
-    color: #fff;
+    color: inherit;
   }
 
   // Descripción
   &__description {
     margin: 0;
     font-size: 12px;
-    line-height: 1.1;
-    color: #cfcfcf;
+    line-height: 1.45;
+    color: inherit;
   }
 
   // Parte inferior
@@ -55,18 +66,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
   }
 
   // Botón
   &__button {
-
-    color: #fff;
+    color: inherit;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
 
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid currentColor;
 
     transition:
       color 0.25s ease,
@@ -75,9 +84,51 @@
     span {
       font-size: 20px;
     }
-
   }
+}
 
- 
-  
+@media (max-width: 680px) {
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(72px, 30%) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 10px 14px;
+    min-height: 0;
+    padding: 14px;
+
+    &__image {
+      grid-column: 1;
+      grid-row: 1 / 4;
+      align-self: stretch;
+    }
+
+    &__content,
+    &__main {
+      display: contents;
+    }
+
+    &__title {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &__technologies {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &__footer {
+      grid-column: 2;
+      grid-row: 3;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    &__description {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      padding-top: 10px;
+      border-top: 1px solid currentColor;
+    }
+  }
 }
