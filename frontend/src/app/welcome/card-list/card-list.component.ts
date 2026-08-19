@@ -45,27 +45,31 @@ export class CardListComponent {
 
     if (selectedLabel) {
       const option = this.labelOptions.find(item => item.label === selectedLabel)!;
-      return [{
+      return this.nonEmptySections([{
         id: selectedLabel,
         title: option.title,
         projects: this.projects.filter(project => project.labels.includes(selectedLabel))
-      }];
+      }]);
     }
 
     if (this.groupingMode() === 'labels') {
-      return this.labelOptions.map(option => ({
+      return this.nonEmptySections(this.labelOptions.map(option => ({
         id: option.label,
         title: option.title,
         projects: this.projects.filter(project => project.labels.includes(option.label))
-      }));
+      })));
     }
 
-    return this.ownershipSections.map(section => ({
+    return this.nonEmptySections(this.ownershipSections.map(section => ({
       id: section.category,
       title: section.title,
       projects: this.projects.filter(project => project.category === section.category)
-    }));
+    })));
   });
+
+  private nonEmptySections(sections: ProjectSection[]): ProjectSection[] {
+    return sections.filter(section => section.projects.length > 0);
+  }
 
   setFilter(label: ProjectLabel | null, menu: HTMLDetailsElement): void {
     this.selectedLabel.set(label);
