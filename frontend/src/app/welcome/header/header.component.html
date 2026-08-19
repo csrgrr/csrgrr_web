@@ -1,5 +1,13 @@
 <header class="header">
-  <div class="header__brand">CSRGRR - DIGITAL EGIPTOLOGY & HUMANITIES</div>
+  <a class="header__brand" routerLink="/"
+    >CSRGRR - DIGITAL EGIPTOLOGY & HUMANITIES</a
+  >
+
+  <nav class="header__nav" aria-label="Main navigation">
+    <a class="header__link" [routerLink]="isAboutPage() ? '/' : '/about'">
+      {{ i18n.text(isAboutPage() ? "projects" : "about") }}
+    </a>
+  </nav>
 
   <details class="language-menu" #languageMenu>
     <summary class="language-menu__trigger">

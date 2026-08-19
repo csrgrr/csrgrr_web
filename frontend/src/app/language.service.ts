@@ -18,7 +18,9 @@ export type TranslationKey =
     | 'texts'
     | 'collections'
     | 'network'
-    | 'archaeologicalSites';
+    | 'archaeologicalSites'
+    | 'about'
+    | 'projects';
 
 export interface LanguageOption {
     code: Language;
@@ -42,7 +44,9 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         texts: 'Texts',
         collections: 'Collections',
         network: 'Network',
-        archaeologicalSites: 'Archaeological sites'
+        archaeologicalSites: 'Archaeological sites',
+        about: 'About',
+        projects: 'Projects'
     },
     es: {
         language: 'Idioma',
@@ -55,12 +59,14 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         thirdPartyProjects: 'Proyectos de terceras partes',
         filter: 'Filtrar',
         allLabels: 'Todos los labels',
-        defaultView: 'Por propiedad',
+        defaultView: 'Por defecto',
         byCategory: 'Por categoría',
         texts: 'Textos',
         collections: 'Colecciones',
         network: 'Redes',
-        archaeologicalSites: 'Yacimientos arqueológicos'
+        archaeologicalSites: 'Yacimientos arqueológicos',
+        about: 'Acerca de',
+        projects: 'Proyectos'
     },
     gl: {
         language: 'Idioma',
@@ -73,12 +79,14 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         thirdPartyProjects: 'Proxectos de terceiros',
         filter: 'Filtrar',
         allLabels: 'Todas as etiquetas',
-        defaultView: 'Por propiedade',
+        defaultView: 'Por defecto',
         byCategory: 'Por categoría',
         texts: 'Textos',
         collections: 'Coleccións',
         network: 'Redes',
-        archaeologicalSites: 'Xacementos arqueolóxicos'
+        archaeologicalSites: 'Xacementos arqueolóxicos',
+        about: 'Sobre',
+        projects: 'Proxectos'
     }
 };
 
@@ -105,7 +113,9 @@ const RLYEHIAN_TRANSLATIONS: Record<TranslationKey, string> = {
     texts: 'Y’hah kadishtu',
     collections: 'Nafl phlegeth',
     network: 'Shugg wgah',
-    archaeologicalSites: 'Kadath nglui'
+    archaeologicalSites: 'Kadath nglui',
+    about: 'Y’bthnk ahf’',
+    projects: 'Mgep’na'
 };
 
 const RLYEHIAN_LEXICON: Record<string, string> = {

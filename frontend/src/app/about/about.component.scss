@@ -1,0 +1,28 @@
+.about-layout {
+  min-height: 100vh;
+}
+
+.about {
+  width: min(800px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 64px 0;
+  box-sizing: border-box;
+}
+
+.about h1 {
+  margin: 0 0 24px;
+  font-size: 32px;
+}
+
+.about p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .about {
+    width: calc(100% - 28px);
+    padding: 40px 0;
+  }
+}
