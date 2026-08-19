@@ -11,4 +11,11 @@ import { HeaderComponent } from '../welcome/header/header.component';
 })
 export class AboutComponent {
     readonly i18n = inject(LanguageService);
+
+    readonly profileLinks = [
+        { label: 'GitHub', url: 'https://github.com/csrgrr' },
+        { label: 'Academia.edu', url: 'https://uah-es.academia.edu/CesarGuerra' },
+        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/c%C3%A9sar-guerra-m%C3%A9ndez-65a362118/' },
+        { label: 'Portfolio', url: 'https://csrgrr.github.io/' }
+    ];
 }

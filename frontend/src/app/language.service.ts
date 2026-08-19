@@ -21,6 +21,12 @@ export type TranslationKey =
     | 'network'
     | 'archaeologicalSites'
     | 'about'
+    | 'aboutRole'
+    | 'aboutIntro'
+    | 'aboutBody'
+    | 'contact'
+    | 'email'
+    | 'profileLinks'
     | 'projects';
 
 export interface LanguageOption {
@@ -48,6 +54,12 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         network: 'Network',
         archaeologicalSites: 'Archaeological sites',
         about: 'About',
+        aboutRole: 'Digital Egyptologist & web developer',
+        aboutIntro: 'Throughout my career, I have had the opportunity to collaborate on several digital humanities initiatives and to develop projects of my own.',
+        aboutBody: 'csrgrr.com was created to showcase my work developing digital research tools for Egyptology and the humanities. It also presents digital Egyptology projects that have accompanied my work as a researcher and developer.',
+        contact: 'Contact',
+        email: 'Email',
+        profileLinks: 'Professional profiles',
         projects: 'Projects'
     },
     es: {
@@ -69,6 +81,12 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         network: 'Redes',
         archaeologicalSites: 'Yacimientos arqueológicos',
         about: 'Acerca de',
+        aboutRole: 'Egiptólogo digital y desarrollador web',
+        aboutIntro: 'A lo largo de mi carrera he tenido la oportunidad de colaborar en diversas iniciativas centradas en las humanidades digitales, además de desarrollar proyectos propios.',
+        aboutBody: 'csrgrr.com nace con el objetivo de reunir mi trabajo como desarrollador de herramientas digitales de investigación aplicadas a la egiptología y las humanidades. También presenta proyectos de egiptología digital que han acompañado mi trayectoria como investigador y desarrollador.',
+        contact: 'Contacto',
+        email: 'Correo electrónico',
+        profileLinks: 'Perfiles profesionales',
         projects: 'Proyectos'
     },
     gl: {
@@ -90,6 +108,12 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         network: 'Redes',
         archaeologicalSites: 'Xacementos arqueolóxicos',
         about: 'Sobre',
+        aboutRole: 'Exiptólogo dixital e desarrollador web',
+        aboutIntro: 'Ao longo da miña carreira tiven a oportunidade de colaborar en diversas iniciativas centradas nas humanidades dixitais, ademais de desenvolver proxectos propios.',
+        aboutBody: 'csrgrr.com nace para reunir o meu traballo como desarrollador de ferramentas dixitais de investigación aplicadas á exiptoloxía e ás humanidades. Tamén presenta proxectos de exiptoloxía dixital que acompañaron a miña traxectoria como investigador e desarrollador.',
+        contact: 'Contacto',
+        email: 'Correo electrónico',
+        profileLinks: 'Perfís profesionais',
         projects: 'Proxectos'
     },
     pt: {
@@ -111,6 +135,12 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         network: 'Redes',
         archaeologicalSites: 'Sítios arqueológicos',
         about: 'Sobre',
+        aboutRole: 'Egiptólogo digital e desenvolvedor web',
+        aboutIntro: 'Ao longo da minha carreira, tive a oportunidade de colaborar em diversas iniciativas centradas nas humanidades digitais, além de desenvolver projetos próprios.',
+        aboutBody: 'csrgrr.com nasceu para reunir o meu trabalho como desenvolvedor de ferramentas digitais de investigação aplicadas à egiptologia e às humanidades. Apresenta também projetos de egiptologia digital que acompanharam o meu percurso como investigador e desarrollador.',
+        contact: 'Contacto',
+        email: 'Correio eletrónico',
+        profileLinks: 'Perfis profissionais',
         projects: 'Projetos'
     }
 };
@@ -142,6 +172,12 @@ const RLYEHIAN_TRANSLATIONS: Record<TranslationKey, string> = {
     network: 'Shugg wgah',
     archaeologicalSites: 'Kadath nglui',
     about: 'Y’bthnk ahf’',
+    aboutRole: 'Kadishtu Khem mgep’ geb',
+    aboutIntro: 'Ya ahf’ kadishtu geb, wgah’na y’hah Khem phlegeth nilgh’ri.',
+    aboutBody: 'Ya geb sll’ha mgep nafl y’hah Khem, phlegeth kadishtu wgah lloig fhtagn.',
+    contact: 'Wgah ahf’',
+    email: 'Y’hah wgah',
+    profileLinks: 'Ahf’ wgah’na',
     projects: 'Mgep’na'
 };
 

@@ -2,12 +2,42 @@
   <app-header></app-header>
 
   <main class="about">
-    <h1>{{ i18n.text("about") }}</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
+    <figure class="about__portrait">
+      <img
+        src="/assets/images/cesarguerra.jpg"
+        alt="César Guerra"
+        width="768"
+        height="768"
+      />
+    </figure>
+
+    <div class="about__content">
+      <p class="about__eyebrow">{{ i18n.text("about") }}</p>
+      <h1>César Guerra</h1>
+      <p class="about__role">{{ i18n.text("aboutRole") }}</p>
+
+      <div class="about__bio">
+        <p>{{ i18n.text("aboutIntro") }}</p>
+        <p>{{ i18n.text("aboutBody") }}</p>
+      </div>
+
+      <section class="about__contact" [attr.aria-label]="i18n.text('contact')">
+        <h2>{{ i18n.text("contact") }}</h2>
+
+        <a class="about__email" href="mailto:guerramendezcesar@gmail.com">
+          <span>{{ i18n.text("email") }}</span>
+          <strong>guerramendezcesar&#64;gmail.com</strong>
+        </a>
+
+        <nav class="about__links" [attr.aria-label]="i18n.text('profileLinks')">
+          @for (link of profileLinks; track link.url) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+              <span>{{ link.label }}</span>
+              <span class="about__external" aria-hidden="true">↗</span>
+            </a>
+          }
+        </nav>
+      </section>
+    </div>
   </main>
 </div>
