@@ -89,8 +89,44 @@ const PROJECT_DESCRIPTIONS: Record<string, Partial<Record<Exclude<Language, 'rly
     }
 };
 
-const ZALGO_ABOVE = ['\u0300', '\u0301', '\u0302', '\u0303', '\u0304', '\u0307', '\u0308'];
-const ZALGO_BELOW = ['\u0316', '\u0317', '\u0318', '\u0319', '\u0323', '\u0324', '\u0325'];
+const RLYEHIAN_TRANSLATIONS: Record<TranslationKey, string> = {
+    language: 'Y’hah',
+    viewProject: 'Lloig mgep',
+    creator: 'Ahf’ y’ geb',
+    projectFallback: 'Mgep',
+    underConstruction: 'Nilgh’ri',
+    myProjects: 'Ya mgep',
+    managedProjects: 'Mgep ya geb',
+    thirdPartyProjects: 'N’ghft mgep',
+    filter: 'Sll’ha',
+    allLabels: 'Sll’ha nafl',
+    defaultView: 'Y’bthnk',
+    byCategory: 'N’ghft',
+    texts: 'Y’hah kadishtu',
+    collections: 'Nafl phlegeth',
+    network: 'Shugg wgah',
+    archaeologicalSites: 'Kadath nglui'
+};
+
+const RLYEHIAN_LEXICON: Record<string, string> = {
+    cthulhu: 'Cthulhu',
+    project: 'mgep',
+    projects: 'mgep’na',
+    research: 'kadishtu',
+    tool: 'sll’ha',
+    name: 'ahf’',
+    texts: 'y’hah',
+    text: 'y’hah',
+    creator: 'ahf’ y’ geb',
+    github: 'Y’git-hub',
+    network: 'shugg wgah',
+    collections: 'nafl phlegeth',
+    collection: 'phlegeth'
+};
+
+const RLYEHIAN_PREFIXES = ['ph', 'ng', 'mglw', 'cth', 'r', 'wgah', 'fht', 'y', 'sll', 'zhro', 'kth', 'gh'];
+const RLYEHIAN_CORES = ['lui', 'nafh', 'agl', 'eh', 'oth', 'ul', 'ai', 'yar', 'og', 'ath', 'or', 'ugg'];
+const RLYEHIAN_SUFFIXES = ['nagl', 'fhtagn', 'nafh', 'lui', 'oth', 'eh', 'agl', 'og', 'yar', 'cth', 'ng', 'az'];
 
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
@@ -101,7 +137,7 @@ export class LanguageService {
         { code: 'en', name: 'English' },
         { code: 'es', name: 'Español' },
         { code: 'gl', name: 'Galego' },
-        { code: 'rly', name: 'R’lyehiano' }
+        { code: 'rly', name: 'R’lyehian' }
     ];
 
     constructor() {
@@ -121,38 +157,54 @@ export class LanguageService {
 
     text(key: TranslationKey): string {
         const language = this.language();
-        const source = TRANSLATIONS[language === 'rly' ? 'en' : language][key];
-        return language === 'rly' ? this.toZalgo(source) : source;
+
+        if (language === 'rly') {
+            return RLYEHIAN_TRANSLATIONS[key];
+        }
+
+        return TRANSLATIONS[language][key];
     }
 
     projectDescription(projectId: string, fallback: string): string {
         const language = this.language();
 
         if (language === 'rly') {
-            return this.toZalgo(fallback);
+            return this.toRlyehian(fallback);
         }
 
         return PROJECT_DESCRIPTIONS[projectId]?.[language] ?? fallback;
     }
 
     content(value: string): string {
-        return this.language() === 'rly' ? this.toZalgo(value) : value;
+        return this.language() === 'rly' ? this.toRlyehian(value) : value;
     }
 
-    private toZalgo(value: string): string {
-        return Array.from(value).map((character, index) => {
-            if (/\s/.test(character)) {
-                return character;
-            }
+    private toRlyehian(value: string): string {
+        return value.replace(/[\p{L}\p{N}]+/gu, word => this.rlyehianWord(word));
+    }
 
-            const code = character.codePointAt(0) ?? index;
-            const above = ZALGO_ABOVE[(code + index) % ZALGO_ABOVE.length];
-            const below = ZALGO_BELOW[(code * 3 + index) % ZALGO_BELOW.length];
-            const extra = index % 3 === 0
-                ? ZALGO_ABOVE[(code + index + 3) % ZALGO_ABOVE.length]
-                : '';
+    private rlyehianWord(word: string): string {
+        const normalized = word.toLocaleLowerCase('en');
+        const knownWord = RLYEHIAN_LEXICON[normalized];
+        const translated = knownWord ?? this.generateRlyehianWord(normalized);
 
-            return `${character}${above}${below}${extra}`;
-        }).join('');
+        return /^\p{Lu}/u.test(word)
+            ? translated.charAt(0).toLocaleUpperCase('en') + translated.slice(1)
+            : translated;
+    }
+
+    private generateRlyehianWord(word: string): string {
+        let hash = 2166136261;
+
+        for (const character of word) {
+            hash = Math.imul(hash ^ (character.codePointAt(0) ?? 0), 16777619) >>> 0;
+        }
+
+        const prefix = RLYEHIAN_PREFIXES[hash % RLYEHIAN_PREFIXES.length];
+        const core = RLYEHIAN_CORES[(hash >>> 8) % RLYEHIAN_CORES.length];
+        const suffix = RLYEHIAN_SUFFIXES[(hash >>> 16) % RLYEHIAN_SUFFIXES.length];
+        const separator = hash % 3 === 0 ? '’' : '';
+
+        return `${prefix}${separator}${core}${suffix}`;
     }
 }
