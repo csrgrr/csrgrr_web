@@ -8,6 +8,7 @@ export const PROJECTS: Project[] = [
     name: 'Osiris Spelling Software',
     description: 'Research tool which allows you to check and compare the spellings of the name of Osiris in the Middle Kingdom Coffin Texts.',
     creator: 'César Guerra',
+    creatorLink: 'https://github.com/csrgrr',
     githubUrl: 'https://github.com/...',
     webUrl: 'https://...',
     image: 'assets/projects/OSS.png',
@@ -16,7 +17,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'osiris-spelling-software-management',
-    category: ProjectCategory.Management,
+    category: ProjectCategory.Team,
     labels: [ProjectLabel.Network, ProjectLabel.Texts],
     name: 'Osiris Spelling Software',
     description: 'Research tool which allows you to check and compare the spellings of the name of Osiris in the Middle Kingdom Coffin Texts.',

@@ -25,6 +25,7 @@ export class CardListComponent {
   private readonly ownershipSections = [
     { category: ProjectCategory.MyProjects, title: 'myProjects' },
     { category: ProjectCategory.Management, title: 'managedProjects' },
+    { category: ProjectCategory.Team, title: 'teamProjects' },
     { category: ProjectCategory.ThirdParty, title: 'thirdPartyProjects' }
   ] as const;
 

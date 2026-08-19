@@ -94,6 +94,18 @@
     text-align: left;
   }
 
+  &__creator-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      outline: none;
+    }
+  }
+
   &__link {
     display: inline-flex;
     align-items: center;
@@ -110,8 +122,9 @@
       outline: none;
     }
 
-    span {
-      font-size: inherit;
+    & + & {
+      padding-left: 12px;
+      border-left: 1px solid currentColor;
     }
   }
 }

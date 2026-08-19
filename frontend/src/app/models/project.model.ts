@@ -1,6 +1,7 @@
 export enum ProjectCategory {
   MyProjects = 'my-projects',
   Management = 'management',
+  Team = 'team',
   ThirdParty = 'third-party'
 }
 
@@ -18,6 +19,7 @@ export interface Project {
   name?: string;
   description?: string;
   creator?: string;
+  creatorLink?: string;
 
   githubUrl?: string;
   webUrl?: string;

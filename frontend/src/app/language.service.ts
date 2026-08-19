@@ -10,6 +10,7 @@ export type TranslationKey =
     | 'underConstruction'
     | 'myProjects'
     | 'managedProjects'
+    | 'teamProjects'
     | 'thirdPartyProjects'
     | 'filter'
     | 'allLabels'
@@ -36,6 +37,7 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         underConstruction: 'Page under construction',
         myProjects: 'My projects',
         managedProjects: 'Projects I manage',
+        teamProjects: 'Part of the team',
         thirdPartyProjects: 'Third-party projects',
         filter: 'Filter',
         allLabels: 'All labels',
@@ -56,6 +58,7 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         underConstruction: 'Página en construcción',
         myProjects: 'Mis proyectos',
         managedProjects: 'Proyectos que administro',
+        teamProjects: 'Parte del equipo',
         thirdPartyProjects: 'Proyectos de terceras partes',
         filter: 'Filtrar',
         allLabels: 'Todos los labels',
@@ -76,6 +79,7 @@ const TRANSLATIONS: Record<Exclude<Language, 'rly'>, Record<TranslationKey, stri
         underConstruction: 'Páxina en construción',
         myProjects: 'Os meus proxectos',
         managedProjects: 'Proxectos que administro',
+        teamProjects: 'Parte do equipo',
         thirdPartyProjects: 'Proxectos de terceiros',
         filter: 'Filtrar',
         allLabels: 'Todas as etiquetas',
@@ -105,6 +109,7 @@ const RLYEHIAN_TRANSLATIONS: Record<TranslationKey, string> = {
     underConstruction: 'Nilgh’ri',
     myProjects: 'Ya mgep',
     managedProjects: 'Mgep ya geb',
+    teamProjects: 'Mgep ya ahf’',
     thirdPartyProjects: 'N’ghft mgep',
     filter: 'Sll’ha',
     allLabels: 'Sll’ha nafl',
