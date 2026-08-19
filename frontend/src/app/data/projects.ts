@@ -8,11 +8,11 @@ export const PROJECTS: Project[] = [
     name: 'Osiris Spelling Software',
     description: 'Research tool which allows you to check and compare the spellings of the name of Osiris in the Middle Kingdom Coffin Texts.',
     creator: 'César Guerra',
-    creatorLink: 'https://github.com/csrgrr',
-    githubUrl: 'https://github.com/...',
-    webUrl: 'https://...',
+    creatorLink: '/about',
+    githubUrl: 'https://github.com/csrgrr/Osiris-Spelling-Software',
+    webUrl: 'https://csrgrr.com/osiris-spelling-software',
     image: 'assets/projects/OSS.png',
-    technologies: ['Swift', 'Python'],
+    technologies: [],
     year: 2026
   },
   {

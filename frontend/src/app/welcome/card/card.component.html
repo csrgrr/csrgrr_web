@@ -29,14 +29,23 @@
       @if (project.creator) {
         <div class="project-card__creator">
           @if (project.creatorLink) {
-            <a
-              [href]="project.creatorLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-card__creator-link"
-            >
-              {{ i18n.content(project.creator) }}
-            </a>
+            @if (isInternalCreatorLink(project.creatorLink)) {
+              <a
+                [routerLink]="project.creatorLink"
+                class="project-card__creator-link"
+              >
+                {{ i18n.content(project.creator) }}
+              </a>
+            } @else {
+              <a
+                [href]="project.creatorLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-card__creator-link"
+              >
+                {{ i18n.content(project.creator) }}
+              </a>
+            }
           } @else {
             <span class="project-card__creator-name">
               {{ i18n.content(project.creator) }}
