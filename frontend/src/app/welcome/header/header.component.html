@@ -1,1 +1,28 @@
-<p>-------------------</p>
+<header class="header">
+  <div class="header__brand">CSRGRR - DIGITAL EGIPTOLOGY & HUMANITIES</div>
+
+  <details class="language-menu" #languageMenu>
+    <summary class="language-menu__trigger">
+      <span>{{ i18n.text("language") }}</span>
+      <span class="language-menu__current">{{ i18n.languageName() }}</span>
+      <span class="language-menu__arrow" aria-hidden="true">↓</span>
+    </summary>
+
+    <div class="language-menu__options" role="menu">
+      @for (option of i18n.options; track option.code) {
+        <button
+          type="button"
+          role="menuitemradio"
+          class="language-menu__option"
+          [class.language-menu__option--active]="
+            i18n.language() === option.code
+          "
+          [attr.aria-checked]="i18n.language() === option.code"
+          (click)="selectLanguage(option.code, languageMenu)"
+        >
+          {{ option.name }}
+        </button>
+      }
+    </div>
+  </details>
+</header>

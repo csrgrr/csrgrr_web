@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Language, LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  readonly i18n = inject(LanguageService);
 
+  selectLanguage(language: Language, menu: HTMLDetailsElement): void {
+    this.i18n.setLanguage(language);
+    menu.open = false;
+  }
 }

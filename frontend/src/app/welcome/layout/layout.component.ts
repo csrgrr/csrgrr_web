@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../language.service';
 import { HeaderComponent } from '../header/header.component';
 import { CardListComponent } from '../card-list/card-list.component';
 
@@ -10,4 +11,5 @@ import { CardListComponent } from '../card-list/card-list.component';
   styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
+  readonly i18n = inject(LanguageService);
 }

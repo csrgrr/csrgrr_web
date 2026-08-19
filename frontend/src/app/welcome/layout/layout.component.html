@@ -2,11 +2,13 @@
   <app-header></app-header>
 
   <div class="list-container">
-      
-  <app-card-list></app-card-list>
+    <app-card-list></app-card-list>
   </div>
 
-    <div class="content">
-      <img src="assets/images/paginaEnConstruccion.png" alt="Página en construcción">
-    </div>
+  <div class="content">
+    <img
+      src="assets/images/paginaEnConstruccion.png"
+      [alt]="i18n.text('underConstruction')"
+    />
+  </div>
 </div>

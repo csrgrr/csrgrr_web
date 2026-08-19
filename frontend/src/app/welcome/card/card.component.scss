@@ -1,6 +1,6 @@
 .project-card {
   display: flex;
-  gap: 24px;
+  gap: 32px;
   width: 100%;
   min-height: 240px;
   background: var(--color-background);
@@ -12,11 +12,22 @@
 
   // Imagen
   &__image {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 42%;
     min-width: 0;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -16px;
+      bottom: 0;
+      width: 1px;
+      background: var(--color-foreground);
+      content: "";
+    }
 
     img {
       display: block;
@@ -92,7 +103,7 @@
     display: grid;
     grid-template-columns: minmax(72px, 30%) minmax(0, 1fr);
     grid-template-rows: auto auto auto auto;
-    gap: 10px 14px;
+    gap: 10px 20px;
     min-height: 0;
     padding: 14px;
 
@@ -100,6 +111,10 @@
       grid-column: 1;
       grid-row: 1 / 4;
       align-self: stretch;
+
+      &::after {
+        right: -10px;
+      }
     }
 
     &__content,

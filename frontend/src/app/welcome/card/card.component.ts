@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { LanguageService } from '../../language.service';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { Project } from '../../models/project.model';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
+  readonly i18n = inject(LanguageService);
 
   @Input({ required: true })
   project!: Project;
