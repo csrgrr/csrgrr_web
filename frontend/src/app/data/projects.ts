@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'osiris-spelling-software',
     category: ProjectCategory.MyProjects,
-    labels: [ProjectLabel.Texts, ProjectLabel.Collections],
+    labels: [ProjectLabel.Texts, ProjectLabel.ArchaeologicalSites],
     name: 'Osiris Spelling Software',
     description: 'Research tool which allows you to check and compare the spellings of the name of Osiris in the Middle Kingdom Coffin Texts.',
     creator: 'César Guerra',
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'mdc-to-unicode',
     category: ProjectCategory.MyProjects,
-    labels: [ProjectLabel.Texts, ProjectLabel.Collections],
+    labels: [ProjectLabel.Texts],
     name: 'MdCToUnicode Converter Online',
     description: 'Tridirectional Egyptian hieroglyphs conversor library and online website (unicode, unicode_code and MdC).',
     creator: 'César Guerra',
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'ocr-pt-ct',
     category: ProjectCategory.Team,
-    labels: [ProjectLabel.Network, ProjectLabel.Texts],
+    labels: [ProjectLabel.Texts],
     name: 'OCR-PT-CT Project',
     description: 'Optical Character Recognition tool for processing texts from the Middle Kingdom Coffin Texts.',
     creator: 'Universidad de Alcalá',
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'ttae',
     category: ProjectCategory.Team,
-    labels: [ProjectLabel.Network, ProjectLabel.Texts],
+    labels: [ProjectLabel.Texts],
     name: 'TTAE project',
     description: 'Continues the OCR-PT-CT project towards implementing a digital toolset to link OCR with transliteration through transcription in a semi-automatic manner.',
     creator: 'Universidad de Alcalá',
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'jsesh',
     category: ProjectCategory.ThirdParty,
-    labels: [ProjectLabel.ArchaeologicalSites, ProjectLabel.Collections],
+    labels: [ProjectLabel.Texts],
     name: 'JSESH',
     description: 'The main word processor for ancient Egyptian hieroglyphic texts, used in many professional egyptological publications',
     creator: 'Serge Rosmorduc',
@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/rosmord/jsesh',
     webUrl: 'https://jsesh.qenherkhopeshef.org/',
     image: 'assets/projects/jsesh.svg',
-    technologies: ['Swift', 'Python'],
+    technologies: [],
     year: 2026
   }
 ];
