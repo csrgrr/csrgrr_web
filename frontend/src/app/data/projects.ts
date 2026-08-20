@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'moxtervar',
-    category: ProjectCategory.Management,
+    category: ProjectCategory.Team,
     labels: [ProjectLabel.Network, ProjectLabel.ResearchTools, ProjectLabel.Texts],
     name: 'Moxtervar',
     description: 'Project which looks into the Ancient Egyptian Pyramid and Coffin Texts (c 2350-1550 BC), and other related materials, for changes in the language, spellings, texts, beliefs, material culture, social data, and historical context.',
