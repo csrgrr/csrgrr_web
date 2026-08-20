@@ -7,6 +7,7 @@ export enum ProjectCategory {
 
 export enum ProjectLabel {
   Texts = 'texts',
+  ResearchTools = 'researchTools',
   Collections = 'collections',
   Network = 'network',
   ArchaeologicalSites = 'archaeologicalSites'

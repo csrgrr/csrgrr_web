@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="143.567mm"
+   height="97.298958mm"
+   viewBox="0 0 143.567 97.298958"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"><inkscape:page
+       x="-9.1773458e-14"
+       y="0"
+       width="143.56702"
+       height="97.298958"
+       id="page2"
+       margin="0"
+       bleed="0" /></sodipodi:namedview><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-43.546389,-102.06186)"><g
+       id="g1"
+       inkscape:export-filename="g1.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.257675;stroke-linecap:round;stroke-linejoin:round"
+         id="rect1"
+         width="143.56702"
+         height="97.298958"
+         x="43.546394"
+         y="102.06186"
+         ry="0.11460784" /><text
+         xml:space="preserve"
+         style="font-size:58.8335px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.91054;stroke-linecap:round;stroke-linejoin:round"
+         x="62.377605"
+         y="158.99365"
+         id="text1"
+         transform="scale(0.91532369,1.0925097)"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;fill-opacity:1;stroke-width:4.91054"
+           x="62.377605"
+           y="158.99365">TLA</tspan></text></g></g></svg>

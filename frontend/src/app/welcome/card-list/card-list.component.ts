@@ -30,6 +30,7 @@ export class CardListComponent {
   ] as const;
 
   readonly labelOptions = [
+    { label: ProjectLabel.ResearchTools, title: 'researchTools' },
     { label: ProjectLabel.Texts, title: 'texts' },
     { label: ProjectLabel.Collections, title: 'collections' },
     { label: ProjectLabel.Network, title: 'network' },

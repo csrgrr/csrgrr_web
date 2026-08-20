@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="89.675362mm"
+   height="89.675377mm"
+   viewBox="0 0 89.675362 89.675377"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"><inkscape:page
+       x="0"
+       y="-2.0599058e-13"
+       width="89.675362"
+       height="89.675385"
+       id="page2"
+       margin="0"
+       bleed="0" /></sodipodi:namedview><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-77.875696,-113.59445)"><g
+       transform="matrix(0.56047108,0,0,-0.56047108,77.875694,203.26982)"
+       fill="#000000"
+       stroke="none"
+       id="g4"
+       style="fill:#ffffff;fill-opacity:1"><path
+         d="M 0,80 V 0 h 80 80 v 80 80 H 80 0 Z m 130,49 c 0,-5 5,-7 10,-4 6,4 10,-12 10,-40 0,-28 -4,-44 -10,-40 -5,3 -10,1 -10,-4 0,-6 -21,-11 -50,-11 -29,0 -50,5 -50,11 0,5 -4,7 -10,4 -6,-4 -10,12 -10,40 0,28 4,44 10,40 6,-3 10,-1 10,4 0,6 21,11 50,11 29,0 50,-5 50,-11 z"
+         id="path1"
+         style="fill:#ffffff;fill-opacity:1" /><path
+         d="m 30,85 c 0,-14 4,-25 8,-25 4,0 8,11 8,25 0,14 -4,25 -8,25 -4,0 -8,-11 -8,-25 z"
+         id="path2"
+         style="fill:#ffffff;fill-opacity:1" /><path
+         d="m 60,85 c 0,-17 5,-25 13,-22 6,2 12,12 12,22 0,10 -6,20 -12,23 -8,2 -13,-6 -13,-23 z m 17,-7 c -3,-8 -6,-5 -6,6 -1,11 2,17 5,13 3,-3 4,-12 1,-19 z"
+         id="path3"
+         style="fill:#ffffff;fill-opacity:1" /><path
+         d="m 106,103 c -3,-3 -6,-16 -6,-27 0,-16 2,-18 9,-7 7,11 9,11 14,0 3,-8 6,-5 6,8 1,23 -12,37 -23,26 z"
+         id="path4"
+         style="fill:#ffffff;fill-opacity:1" /></g></g></svg>

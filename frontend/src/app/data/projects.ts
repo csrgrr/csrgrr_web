@@ -4,16 +4,16 @@ export const PROJECTS: Project[] = [
   {
     id: 'osiris-spelling-software',
     category: ProjectCategory.MyProjects,
-    labels: [ProjectLabel.Texts, ProjectLabel.ArchaeologicalSites],
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts, ProjectLabel.ArchaeologicalSites],
     name: 'Osiris Spelling Software',
     description: 'Research tool which allows you to check and compare the spellings of the name of Osiris in the Middle Kingdom Coffin Texts.',
     creator: 'César Guerra',
     creatorLink: '/about',
     githubUrl: 'https://github.com/csrgrr/Osiris-Spelling-Software',
-    webUrl: 'https://csrgrr.com/osiris-spelling-software',
+    webUrl: '/osiris-spelling-software',
     image: 'assets/projects/OSS.png',
     technologies: [],
-    year: 2026
+    year: 2024
   },
   {
     id: 'mdc-to-unicode',
@@ -27,7 +27,59 @@ export const PROJECTS: Project[] = [
     webUrl: 'https://csrgrr.github.io/pages/projects/projectsOnline/MdcToUnicode.html',
     image: 'assets/projects/mdc-uni.png',
     technologies: [],
+    year: 2024
+  },
+  {
+    id: 'moxtervar-database',
+    category: ProjectCategory.Management,
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts],
+    name: 'Moxtervar Database',
+    description: 'Database which collects data on ancient Egyptian Coffin Texts to digitise them, analyse them and make them accessible. The data have been extracted from two sources: Adriaan de Buck (1935-1961) and Leonard Lesko (1979).',
+    creator: 'MOXTERVAR Project',
+    creatorLink: 'https://www.mortexvar.com/',
+    webUrl: 'http://database.mortexvar.com/',
+    image: 'assets/projects/mortexvar-database.svg',
+    technologies: [],
     year: 2026
+  },
+  {
+    id: 'riipoa',
+    category: ProjectCategory.Management,
+    labels: [ProjectLabel.Network],
+    name: 'RIIPOA - Red Iberoamericana de Investigación en Patrimonio y Arqueología',
+    description: 'Ibero-American Network of Researchers in the Ancient Near East. News, conferences, publications and more.',
+    creator: 'Universidad de Alcalá',
+    creatorLink: 'https://www.uah.es',
+    webUrl: 'https://riipoa.web.uah.es',
+    image: 'assets/projects/riipoa.png',
+    technologies: [],
+    year: 2020
+  },
+  {
+    id: 'hepol',
+    category: ProjectCategory.Management,
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts, ProjectLabel.ArchaeologicalSites],
+    name: 'Hispania Epigraphica',
+    description: 'Online database that collects and provides information about epigraphic inscriptions from Roman Hispania.',
+    creator: 'Universidad de Alcalá',
+    creatorLink: 'https://www.uah.es',
+    webUrl: 'https://hepol.web.uah.es',
+    image: 'assets/projects/hepol.svg',
+    technologies: [],
+    year: 2026
+  },
+  {
+    id: 'moxtervar',
+    category: ProjectCategory.Management,
+    labels: [ProjectLabel.Network, ProjectLabel.ResearchTools, ProjectLabel.Texts],
+    name: 'Moxtervar',
+    description: 'Project which looks into the Ancient Egyptian Pyramid and Coffin Texts (c 2350-1550 BC), and other related materials, for changes in the language, spellings, texts, beliefs, material culture, social data, and historical context.',
+    creator: 'MOXTERVAR Project',
+    creatorLink: 'https://www.mortexvar.com/',
+    webUrl: 'https://www.mortexvar.com/',
+    image: 'assets/projects/mortexvar.png',
+    technologies: [],
+    year: 2020
   },
   {
     id: 'ocr-pt-ct',
@@ -68,5 +120,45 @@ export const PROJECTS: Project[] = [
     image: 'assets/projects/jsesh.svg',
     technologies: [],
     year: 2026
+  },
+  {
+    id: 'tla',
+    category: ProjectCategory.ThirdParty,
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts],
+    name: 'Thesaurus Linguae Aegyptiae',
+    description: 'Online database and digital dictionary for the languages and texts of ancient Egypt, providing access to Egyptian words, texts, and their translations.',
+    creator: 'Berlin-Brandenburg Academy of Sciences and Humanities',
+    creatorLink: 'https://www.bbaw.de/',
+    githubUrl: '',
+    webUrl: 'https://thesaurus-linguae-aegyptiae.de/',
+    image: 'assets/projects/tla.svg',
+    technologies: [],
+    year: 2004
+  },
+  {
+    id: 'pnm-names',
+    category: ProjectCategory.ThirdParty,
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts],
+    name: 'Persons and Names of the Middle Kingdom and early New Kingdom',
+    description: 'Open-access database of personal names, persons, titles, and written sources from the Egyptian Middle Kingdom and early New Kingdom.',
+    creator: 'Johannes Gutenberg University Mainz',
+    creatorLink: 'https://www.uni-mainz.de/',
+    webUrl: 'https://pnm.uni-mainz.de/names',
+    image: 'assets/projects/pnm-names.png',
+    technologies: [],
+    year: 2018
+  },
+  {
+    id: 'ptmp',
+    category: ProjectCategory.ThirdParty,
+    labels: [ProjectLabel.ResearchTools, ProjectLabel.ArchaeologicalSites],
+    name: 'Theban Mapping Project',
+    description: 'Digital archaeological project documenting and mapping the monuments and tombs of the Theban Necropolis in Egypt.',
+    creator: 'American University in Cairo',
+    creatorLink: 'https://www.aucegypt.edu/',
+    webUrl: 'https://thebanmappingproject.com/',
+    image: 'assets/projects/TMP.svg',
+    technologies: [],
+    year: 1978
   }
 ];
