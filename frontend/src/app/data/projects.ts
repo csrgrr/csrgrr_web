@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     creator: 'César Guerra',
     creatorLink: '/about',
     githubUrl: 'https://github.com/csrgrr/MdCToUnicode',
-    webUrl: 'https://csrgrr.github.io/pages/projects/projectsOnline/MdcToUnicode.html',
+    webUrl: '/mdc-to-unicode',
     image: 'assets/projects/mdc-uni.png',
     technologies: [],
     year: 2024
