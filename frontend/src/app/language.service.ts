@@ -188,7 +188,7 @@ const PROJECT_DESCRIPTIONS: Record<
         pt: 'O principal processador de textos hieroglíficos do antigo Egito, utilizado em numerosas publicações egiptológicas profissionais.'
     },
 
-    'moxtervar-database': {
+    'mortexvar-database': {
         es: 'Base de datos que recopila datos sobre los Textos de los Sarcófagos del antiguo Egipto para digitalizarlos, analizarlos y hacerlos accesibles. Los datos se han extraído de dos fuentes: Adriaan de Buck (1935-1961) y Leonard Lesko (1979).',
         gl: 'Base de datos que recompila datos sobre os Textos dos Sarcófagos do antigo Exipto para dixitalizalos, analizalos e facelos accesibles. Os datos foron extraídos de dúas fontes: Adriaan de Buck (1935-1961) e Leonard Lesko (1979).',
         pt: 'Base de dados que reúne dados sobre os Textos dos Sarcófagos do antigo Egito para os digitalizar, analisar e tornar acessíveis. Os dados foram extraídos de duas fontes: Adriaan de Buck (1935-1961) e Leonard Lesko (1979).'
@@ -206,7 +206,7 @@ const PROJECT_DESCRIPTIONS: Record<
         pt: 'Base de dados online que reúne e disponibiliza informação sobre inscrições epigráficas da Hispânia romana.'
     },
 
-    moxtervar: {
+    mortexvar: {
         es: 'Proyecto que estudia los Textos de las Pirámides y los Textos de los Sarcófagos del antiguo Egipto (c. 2350-1550 a. C.), así como otros materiales relacionados, para analizar los cambios en la lengua, las grafías, los textos, las creencias, la cultura material, los datos sociales y el contexto histórico.',
         gl: 'Proxecto que estuda os Textos das Pirámides e os Textos dos Sarcófagos do antigo Exipto (c. 2350-1550 a. C.), así como outros materiais relacionados, para analizar os cambios na lingua, nas grafías, nos textos, nas crenzas, na cultura material, nos datos sociais e no contexto histórico.',
         pt: 'Projeto que estuda os Textos das Pirâmides e os Textos dos Sarcófagos do antigo Egito (c. 2350-1550 a. C.), bem como outros materiais relacionados, para analisar as mudanças na língua, nas grafias, nos textos, nas crenças, na cultura material, nos dados sociais e no contexto histórico.'
