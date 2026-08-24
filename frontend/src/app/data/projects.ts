@@ -30,12 +30,12 @@ export const PROJECTS: Project[] = [
     year: 2024
   },
   {
-    id: 'moxtervar-database',
+    id: 'mortexvar-database',
     category: ProjectCategory.Management,
     labels: [ProjectLabel.ResearchTools, ProjectLabel.Texts],
-    name: 'Moxtervar Database',
+    name: 'MORTEXVAR Database',
     description: 'Database which collects data on ancient Egyptian Coffin Texts to digitise them, analyse them and make them accessible. The data have been extracted from two sources: Adriaan de Buck (1935-1961) and Leonard Lesko (1979).',
-    creator: 'MOXTERVAR Project',
+    creator: 'MORTEXVAR Project',
     creatorLink: 'https://www.mortexvar.com/',
     webUrl: 'http://database.mortexvar.com/',
     image: 'assets/projects/mortexvar-database.svg',
@@ -69,12 +69,12 @@ export const PROJECTS: Project[] = [
     year: 2026
   },
   {
-    id: 'moxtervar',
+    id: 'mortexvar',
     category: ProjectCategory.Team,
     labels: [ProjectLabel.Network, ProjectLabel.ResearchTools, ProjectLabel.Texts],
-    name: 'Moxtervar',
+    name: 'MORTEXVAR',
     description: 'Project which looks into the Ancient Egyptian Pyramid and Coffin Texts (c 2350-1550 BC), and other related materials, for changes in the language, spellings, texts, beliefs, material culture, social data, and historical context.',
-    creator: 'MOXTERVAR Project',
+    creator: 'MORTEXVAR Project',
     creatorLink: 'https://www.mortexvar.com/',
     webUrl: 'https://www.mortexvar.com/',
     image: 'assets/projects/mortexvar.png',
