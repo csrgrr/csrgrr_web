@@ -97,4 +97,3 @@ jobs:
           sftp_only: true
           local_path: "CSRGRR/deploy/*"
           remote_path: ${{ secrets.IONOS_TARGET }}
-          sftpArgs: "-b"
