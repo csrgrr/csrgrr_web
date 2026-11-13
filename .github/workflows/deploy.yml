@@ -1,0 +1,99 @@
+name: Deploy Angular to IONOS
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ionos-production
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy Angular
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: CSRGRR
+
+    steps:
+      # 1. Descargar repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: CSRGRR/package-lock.json
+
+      # 3. Instalar dependencias
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Compilar Angular
+      - name: Build Angular
+        run: npm run build -- --configuration production
+
+      # 5. Detectar carpeta de compilación
+      - name: Detect Angular output
+        id: output
+        shell: bash
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "::error::No existe CSRGRR/dist"
+            exit 1
+          fi
+
+          BROWSER_INDEX=$(find dist -type f \
+            -path "*/browser/index.html" -print -quit)
+
+          if [ -n "$BROWSER_INDEX" ]; then
+            DEPLOY_DIR="${BROWSER_INDEX%/index.html}"
+          else
+            INDEX_FILE=$(find dist -maxdepth 3 \
+              -type f -name "index.html" -print -quit)
+
+            if [ -z "$INDEX_FILE" ]; then
+              echo "::error::No se encontró index.html"
+              exit 1
+            fi
+
+            DEPLOY_DIR="${INDEX_FILE%/index.html}"
+          fi
+
+          # Comprobar que es una compilación SPA
+          if find "$DEPLOY_DIR" -name "server.mjs" | grep -q .; then
+            echo "::error::Se detectó un build SSR"
+            exit 1
+          fi
+
+          echo "Carpeta de publicación: $DEPLOY_DIR"
+          echo "deploy_dir=$DEPLOY_DIR" >> "$GITHUB_OUTPUT"
+
+      # 6. Preparar archivos
+      - name: Prepare deployment
+        run: |
+          mkdir -p deploy
+          cp -a "${{ steps.output.outputs.deploy_dir }}/." deploy/
+
+      # 7. Desplegar en IONOS
+      - name: Deploy to IONOS via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.IONOS_HOST }}
+          username: ${{ secrets.IONOS_USERNAME }}
+          password: ${{ secrets.IONOS_PASSWORD }}
+          port: 22
+          sftp_only: true
+          local_path: "CSRGRR/deploy/*"
+          remote_path: ${{ secrets.IONOS_TARGET }}
